@@ -11,3 +11,10 @@ export default function handler(
 ) {
   res.status(200).json({ name: 'John Doe' })
 }
+
+export const fetcher = async () => {
+  await new Promise(resolve => setTimeout(resolve, 3000))
+  return {
+    name: 'Joe Doe Doe'
+  }
+}
