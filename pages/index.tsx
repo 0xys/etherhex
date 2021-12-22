@@ -41,7 +41,7 @@ const Home: NextPage = () => {
         <HexBoard />
         {/* <EvmLinkGroup type='address' data='0x0084a81668b9a978416abeb88bc1572816cc7cac' /> */}
 
-        <div className={styles.grid}>
+        {/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API!!</p>
@@ -69,7 +69,7 @@ const Home: NextPage = () => {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
 
       <footer className={styles.footer}>

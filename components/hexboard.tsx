@@ -55,7 +55,6 @@ const Popup = (props: {hexString: string}) => {
             <AbiLink sig={props.hexString}/>
         )
     }
-
     if(length == 20){
         console.log('return address link')
         return (
