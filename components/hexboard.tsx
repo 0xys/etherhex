@@ -14,7 +14,7 @@ export const HexBoard = () => {
     let hexString = '';
     if(hex && hex != ''){
         try{
-            if(hex.startsWith('0x')){
+            if(hex.startsWith('0x') || hex.startsWith('0X')){
                 console.log('jjj')
                 const n = new BN(hex.substring(2), 'hex')
                 const length = Math.ceil(hex.substring(2).length/2)*2
