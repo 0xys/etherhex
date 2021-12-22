@@ -9,6 +9,7 @@ export const EvmLinkGroup = (props: {type: EvmLinkType, data: string}) => {
             alignItems="center"
             spacing={2}>
             <EvmLink network='ether' type={props.type} data={props.data} />
+            <EvmLink network='matic' type={props.type} data={props.data} />
             <EvmLink network='ropsten' type={props.type} data={props.data} />
         </Stack>
     )

@@ -46,9 +46,9 @@ const getInfo = (network: EvmNetworkType): [avatar: string, label: string, domai
     if(network == 'ropsten'){
         return ['r', 'ropsten', 'ropsten.etherscan.io'];
     }
-    // if(network == 'matic'){
-    //     return ['M', 'polygonscan'];
-    // }
+    if(network == 'matic'){
+        return ['M', 'polygon', 'polygonscan.com'];
+    }
     // if(network == 'bsc'){
     //     return ['B', 'bscscan'];
     // }
