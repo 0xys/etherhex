@@ -35,7 +35,7 @@ export const HexBoard = () => {
 
     return (
         <Stack spacing={4}>
-            <HexNum hexString={hexString} onChange={e => {
+            <HexNum hexString={hex} onChange={e => {
                     setHex(e.target.value)
                     console.log('onChange on hexboard')
                 }

@@ -11,8 +11,8 @@ export const AbiLink = (props: {sig: string}) => {
             target='_blank'
             rel="noreferrer"
             >
-            <h3>Maybe ABI signature? &rarr;</h3>
-            {/* <p>Find in-depth information about Next.js features and API!!</p> */}
+            <h3>Maybe ABI signature?</h3>
+            <p>0x{props.sig} &rarr;</p>
         </a>
     )
 }

@@ -4,16 +4,24 @@ import TextField from '@mui/material/TextField';
 
 import BN from 'bn.js'
 import { Stack, Typography } from '@mui/material';
+import { isNumberObject } from 'util/types';
 
 export type OnChangeType = React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+
+const nonNumRegex = /[^0-9]/;
 
 export const HexNum = (props: { hexString: string, onChange: OnChangeType}) => {
     const hex = props.hexString
 
+    console.log('input', hex)
+
     let numFromHex: string = '';
+    let hexFromNum: string = '';
+    let is0xPrefix = false;
     if(hex && hex != ''){
         try{
-            if(hex.startsWith('0x')){
+            if(hex.startsWith('0x') || hex.startsWith('0X')){
+                is0xPrefix = true
                 const n = new BN(hex.substring(2), 'hex')
                 numFromHex = n?.toString()
             }else{
@@ -25,6 +33,11 @@ export const HexNum = (props: { hexString: string, onChange: OnChangeType}) => {
         }
     }
 
+    if(!is0xPrefix && hex !== '' && !hex.match(nonNumRegex)){
+        console.log('number:', hex)
+        const n = new BN(hex)
+        hexFromNum = n.toString('hex')
+    }
     const isHexError = numFromHex == '';
 
     return (
@@ -33,15 +46,18 @@ export const HexNum = (props: { hexString: string, onChange: OnChangeType}) => {
             <TextField id="hex"
                 error={isHexError}
                 fullWidth
-                label="Hex"
+                label="hex or number"
                 variant="outlined"
                 onChange={e => {
                         console.log('onChange on hexnum')
                         props.onChange(e)
                     }
                 }
-                helperText={isHexError ? 'not hex string' : ''}
+                helperText={isHexError ? 'type hex or number' : ''}
             />
+            <Typography variant='h6' gutterBottom component="div" fontFamily='Menlo, Monaco, Lucida Console'>
+                { hexFromNum != '' ? `0x${hexFromNum}` : '' }
+            </Typography>
             <Typography variant='h6' gutterBottom component="div" fontFamily='Menlo, Monaco, Lucida Console'>
                 {numFromHex ?? ''}
             </Typography>
