@@ -5,6 +5,7 @@ import * as React from 'react';
 import { EvmLinkGroup } from './evmlinkGroup';
 import { HexNum } from './hexnum';
 import { Typography } from '@mui/material';
+import { AbiLink } from './abilink';
 
 export const HexBoard = () => {
     const [hex, setHex] = React.useState('type hex string')
@@ -48,6 +49,12 @@ const Popup = (props: {hexString: string}) => {
     const length = Math.ceil(props.hexString.length/2);
     console.log('length:', length)
     console.log('hexValue:', props.hexString)
+
+    if(length == 4){
+        return (
+            <AbiLink sig={props.hexString}/>
+        )
+    }
 
     if(length == 20){
         console.log('return address link')
