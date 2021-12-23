@@ -2,23 +2,18 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import useSWR from 'swr'
-import { fetcher } from './api/hello'
 
-import { HexNum } from '../components/hexnum'
-import { EvmLink } from '../components/evmlink'
 import React from 'react'
-import { EvmLinkGroup } from '../components/evmlinkGroup'
 import { HexBoard } from '../components/hexboard'
 
 const Home: NextPage = () => {
 
-  let message = 'hello';
+  // let message = 'hello';
   // const {data, error} = useSWR('./api/hello', fetcher)
-  const {data, error} = useSWR('./api/hello')
+  // const {data, error} = useSWR('./api/hello')
 
-  if(error) message = 'error'
-  if(!data) message = 'loading'
+  // if(error) message = 'error'
+  // if(!data) message = 'loading'
 
   return (
     <div className={styles.container}>

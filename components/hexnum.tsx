@@ -1,10 +1,8 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
 import BN from 'bn.js'
 import { Stack, Typography } from '@mui/material';
-import { isNumberObject } from 'util/types';
 
 export type OnChangeType = React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
 

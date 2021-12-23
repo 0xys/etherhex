@@ -1,5 +1,4 @@
 import Stack from '@mui/material/Stack';
-import Paper from '@mui/material/Paper';
 import BN from 'bn.js';
 import * as React from 'react';
 import { EvmLinkGroup } from './evmlinkGroup';

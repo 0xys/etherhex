@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { EvmLink, EvmLinkState, EvmLinkType } from './evmlink';
+import { EvmLink, EvmLinkType } from './evmlink';
 import Stack from '@mui/material/Stack';
 
 export const EvmLinkGroup = (props: {type: EvmLinkType, data: string}) => {

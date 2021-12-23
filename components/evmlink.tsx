@@ -1,12 +1,9 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
 
 export type EvmNetworkType = 'ether' | 'ropsten' | 'matic' | 'bsc' | 'xdai' | 'avax';
 export type EvmLinkType = 'address' | 'hash';
-
-
 
 export interface EvmLinkState {
     network: EvmNetworkType
