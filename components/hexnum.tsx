@@ -13,8 +13,6 @@ const nonNumRegex = /[^0-9]/;
 export const HexNum = (props: { hexString: string, onChange: OnChangeType}) => {
     const hex = props.hexString
 
-    console.log('input', hex)
-
     let numFromHex: string = '';
     let hexFromNum: string = '';
     let is0xPrefix = false;
@@ -34,7 +32,6 @@ export const HexNum = (props: { hexString: string, onChange: OnChangeType}) => {
     }
 
     if(!is0xPrefix && hex !== '' && !hex.match(nonNumRegex)){
-        console.log('number:', hex)
         const n = new BN(hex)
         hexFromNum = n.toString('hex')
     }
@@ -62,27 +59,5 @@ export const HexNum = (props: { hexString: string, onChange: OnChangeType}) => {
                 {numFromHex ?? ''}
             </Typography>
         </Stack>
-        // <Box
-        //     component="form"
-        //     sx={{
-        //         '& > :not(style)': { m: 1, width: '50ch' },
-        //     }}
-        //     noValidate
-        //     autoComplete="off"
-        // >
-        //     <TextField id="hex"
-        //         error={isHexError}
-        //         fullWidth
-        //         label="Hex"
-        //         variant="outlined"
-        //         onChange={e => {
-        //                 console.log('onChange on hexnum')
-        //                 props.onChange(e)
-        //             }
-        //         }
-        //         helperText={isHexError ? 'not hex string' : ''}
-        //     />
-        //     <p>{numFromHex ?? ''}</p>
-        // </Box>
     );
 }
